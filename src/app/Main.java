@@ -16,15 +16,10 @@ public class Main {
         List<Receta> recetas  = datosReceta.cargar();
         
         System.out.println("=== INVENTARIO ===");
-        for (Objeto o : inventario) {
-            System.out.println(o);
-        }
+        for (Objeto o : inventario) System.out.println(o);        
 
         System.out.println("\n=== RECETAS ===");
-        for (Receta r : recetas) {
-            System.out.println(r);
-        }
+        for (Receta r : recetas) System.out.println(r);
 
 	}
-
 }
