@@ -10,11 +10,9 @@ import modelo.Receta;
 public class Main {
 
 	public static void main(String[] args) {
-		CargadorDeInventarioXML datosInventario = new CargadorDeInventarioXML("res/inventario.xml");
-		CargadorDeRecetaXML datosReceta = new CargadorDeRecetaXML("res/recetas.xml");
 
-		List<Objeto> inventario = datosInventario.cargar();
-		List<Receta> recetas = datosReceta.cargar();
+		List<Objeto> inventario = new CargadorDeInventarioXML("res/inventario.xml").cargar();
+		List<Receta> recetas = new CargadorDeRecetaXML("res/recetas.xml").cargar();
 
 		System.out.println("=== INVENTARIO ===");
 		for (Objeto o : inventario)	System.out.println(o);
