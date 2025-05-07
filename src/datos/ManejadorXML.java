@@ -8,8 +8,6 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.helpers.DefaultHandler;
 
-import modelo.Objeto;
-
 public abstract class ManejadorXML<T> extends DefaultHandler {
 	protected final String rutaArchivo;
 
