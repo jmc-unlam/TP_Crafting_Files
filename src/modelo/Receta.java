@@ -7,9 +7,9 @@ public class Receta {
 	private String nombre;
 	private int tiempo;
 	private int cantidadProducida;
-	private List<Ingrediente> ingredientes;
+	private List<Objeto> ingredientes;
 
-	public Receta(String nombre, int tiempo, int cantidadProducida, List<Ingrediente> ingredientes) {
+	public Receta(String nombre, int tiempo, int cantidadProducida, List<Objeto> ingredientes) {
 		this.nombre = nombre;
 		this.tiempo = tiempo;
 		this.cantidadProducida = cantidadProducida;
@@ -28,7 +28,7 @@ public class Receta {
 		return cantidadProducida;
 	}
 
-	public List<Ingrediente> getIngredientes() {
+	public List<Objeto> getIngredientes() {
 		return ingredientes;
 	}
 

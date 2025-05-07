@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface LectorDeDatos<T> {
 
-	List<T> cargar();
-	
+	public abstract List<T> cargar();
+
 }
