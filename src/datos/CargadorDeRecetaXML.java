@@ -10,18 +10,15 @@ import modelo.Receta;
 
 public class CargadorDeRecetaXML extends ManejadorXML<Receta> {
 
-	private List<Receta> recetas = new ArrayList<>();
 	private Receta recetaActual;
 	private Objeto ingredienteActual;
 	private List<Objeto> ingredientesActuales;
 	private StringBuilder contenido;
 
-
 	public CargadorDeRecetaXML(String rutaArchivo) {
 		super(rutaArchivo);
 	}
 
-	
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		contenido = new StringBuilder();
@@ -39,7 +36,7 @@ public class CargadorDeRecetaXML extends ManejadorXML<Receta> {
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		if (qName.equalsIgnoreCase("receta")) {
-			recetas.add(recetaActual);
+			datos.add(recetaActual);
 			recetaActual = null;
 		} else if (qName.equalsIgnoreCase("nombre")) {
 			if (recetaActual == null) {
@@ -70,11 +67,4 @@ public class CargadorDeRecetaXML extends ManejadorXML<Receta> {
 	public void characters(char[] ch, int start, int length) throws SAXException {
 		contenido.append(ch, start, length);
 	}
-
-
-	@Override
-	public List<Receta> getDatos() {
-		return recetas;
-	}
-
 }

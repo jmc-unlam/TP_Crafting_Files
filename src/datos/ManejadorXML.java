@@ -1,6 +1,7 @@
 package datos;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.SAXParser;
@@ -9,10 +10,12 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.helpers.DefaultHandler;
 
 public abstract class ManejadorXML<T> extends DefaultHandler {
-	protected final String rutaArchivo;
+	private final String rutaArchivo;
+	protected List<T> datos; 
 
 	public ManejadorXML(String rutaArchivo) {
 		this.rutaArchivo = rutaArchivo;
+		this.datos = new ArrayList<>();
 	}
 
 	public List<T> cargar() {
@@ -26,6 +29,7 @@ public abstract class ManejadorXML<T> extends DefaultHandler {
 		return getDatos();
 	}
 	
-	public abstract List<T> getDatos();
-
+	public List<T> getDatos() {
+		return this.datos;
+	}
 }

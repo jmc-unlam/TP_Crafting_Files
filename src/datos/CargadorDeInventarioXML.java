@@ -1,8 +1,5 @@
 package datos;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
@@ -10,7 +7,6 @@ import modelo.Objeto;
 
 public class CargadorDeInventarioXML extends ManejadorXML<Objeto> {
 
-	List<Objeto> inventario = new ArrayList<>();
 	private Objeto objetoActual;
 	private StringBuilder contenido;
 
@@ -30,7 +26,7 @@ public class CargadorDeInventarioXML extends ManejadorXML<Objeto> {
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		if (qName.equalsIgnoreCase("objeto")) {
-			inventario.add(objetoActual);
+			datos.add(objetoActual);
 		} else if (qName.equalsIgnoreCase("nombre")) {
 			String nombre = contenido.toString().trim();
 			if (objetoActual == null) {
@@ -52,11 +48,6 @@ public class CargadorDeInventarioXML extends ManejadorXML<Objeto> {
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
 		contenido.append(ch, start, length);
-	}
-
-	@Override
-	public List<Objeto> getDatos() {
-		return inventario;
 	}
 
 }
