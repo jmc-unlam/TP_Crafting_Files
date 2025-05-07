@@ -14,7 +14,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import modelo.Objeto;
 import modelo.Receta;
 
-public class CargadorDeRecetaXML extends DefaultHandler implements LectorDeDatos<Receta> {
+public class CargadorDeRecetaXML extends ManejadorXML<Receta> {
 
 	private List<Receta> recetas = new ArrayList<>();
 	private Receta recetaActual;
@@ -22,24 +22,12 @@ public class CargadorDeRecetaXML extends DefaultHandler implements LectorDeDatos
 	private List<Objeto> ingredientesActuales;
 	private StringBuilder contenido;
 
-	private final String rutaArchivo;
 
 	public CargadorDeRecetaXML(String rutaArchivo) {
-		this.rutaArchivo = rutaArchivo;
+		super(rutaArchivo);
 	}
 
-	@Override
-	public List<Receta> cargar() {
-		try {
-			SAXParserFactory factory = SAXParserFactory.newInstance();
-			SAXParser parser = factory.newSAXParser();
-			parser.parse(new File(rutaArchivo), this);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return recetas;
-	}
-
+	
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		contenido = new StringBuilder();
@@ -87,6 +75,12 @@ public class CargadorDeRecetaXML extends DefaultHandler implements LectorDeDatos
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
 		contenido.append(ch, start, length);
+	}
+
+
+	@Override
+	public List<Receta> getDatos() {
+		return recetas;
 	}
 
 }

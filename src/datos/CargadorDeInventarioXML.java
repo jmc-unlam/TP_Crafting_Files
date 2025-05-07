@@ -1,40 +1,22 @@
 package datos;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 import modelo.Objeto;
 
-public class CargadorDeInventarioXML extends DefaultHandler implements LectorDeDatos<Objeto> {
+public class CargadorDeInventarioXML extends ManejadorXML<Objeto> {
 
-	private List<Objeto> inventario = new ArrayList<>();
+	List<Objeto> inventario = new ArrayList<>();
 	private Objeto objetoActual;
 	private StringBuilder contenido;
 
-	private final String rutaArchivo;
 
 	public CargadorDeInventarioXML(String rutaArchivo) {
-		this.rutaArchivo = rutaArchivo;
-	}
-
-	@Override
-	public List<Objeto> cargar() {
-		try {
-			SAXParserFactory factory = SAXParserFactory.newInstance();
-			SAXParser parser = factory.newSAXParser();
-			parser.parse(new File(rutaArchivo), this);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return inventario;
+		super(rutaArchivo);
 	}
 
 	@Override
@@ -70,6 +52,11 @@ public class CargadorDeInventarioXML extends DefaultHandler implements LectorDeD
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
 		contenido.append(ch, start, length);
+	}
+
+	@Override
+	public List<Objeto> getDatos() {
+		return inventario;
 	}
 
 }
