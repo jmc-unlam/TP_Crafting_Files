@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventario>
+    <objetos>
+        <objeto>
+            <nombre>Madera</nombre>
+            <cantidad>15</cantidad>
+            <calidad>normal</calidad>
+        </objeto>
+        
+        <objeto>
+            <nombre>Mineral de Hierro</nombre>
+            <cantidad>8</cantidad>
+            <calidad>normal</calidad>
+        </objeto>
+        
+        <objeto>
+            <nombre>Carbón</nombre>
+            <cantidad>10</cantidad>
+            <calidad>normal</calidad>
+        </objeto>
+        
+        <objeto>
+            <nombre>Tabla de Madera</nombre>
+            <cantidad>4</cantidad>
+            <calidad>normal</calidad>
+        </objeto>
+                
+    </objetos>
+</inventario>
