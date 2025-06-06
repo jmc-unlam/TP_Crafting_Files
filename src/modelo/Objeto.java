@@ -1,34 +1,31 @@
 package modelo;
 
-public class Objeto {
+public abstract class Objeto {
 
 	private String nombre;
-	private int cantidad;
-	private String calidad;
 
-	public Objeto(String nombre, int cantidad, String calidad) {
+	public Objeto(String nombre) {
 		this.nombre = nombre;
-		this.cantidad = cantidad;
-		this.calidad = calidad;
-	}
-
-	public Objeto(String nombre, int cantidad) {
-		this.nombre = nombre;
-		this.cantidad = cantidad;
-		this.calidad = "normal";
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
+	
+	public abstract boolean esBasico();
+	
+	@Override
+  public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Objeto objeto = (Objeto) o;
+      return nombre.equals(objeto.nombre);
+  }
 
-	public int getCantidad() {
-		return cantidad;
-	}
-
-	public String getCalidad() {
-		return calidad;
-	}
+  @Override
+  public int hashCode() {
+      return Objects.hash(nombre);
+  }
 
 	@Override
 	public String toString() {

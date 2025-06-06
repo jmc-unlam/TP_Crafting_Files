@@ -1,34 +1,33 @@
 package modelo;
 
-import java.util.List;
+import java.util.Map;
 
 public class Receta {
+	private ObjetoIntermedio objetoProducido;
+  private Map<Objeto, Integer> ingredientes;
+  private int cantidadProducida;
+  private int tiempoBase;
 
-	private String nombre;
-	private int tiempo;
-	private int cantidadProducida;
-	private List<Objeto> ingredientes;
+  public Receta(ObjetoIntermedio objetoProducido, Map<Objeto, Integer> ingredientes, int cantidadProducida, int tiempoBase) {
+      this.objetoProducido = objetoProducido;
+      this.ingredientes = ingredientes;
+      this.cantidadProducida = cantidadProducida;
+      this.tiempoBase = tiempoBase;
+  }
 
-	public Receta(String nombre, int tiempo, int cantidadProducida, List<Objeto> ingredientes) {
-		this.nombre = nombre;
-		this.tiempo = tiempo;
-		this.cantidadProducida = cantidadProducida;
-		this.ingredientes = ingredientes;
-	}
-
-	public String getNombre() {
+	public ObjetoIntermedio getObjetoProducido() {
 		return nombre;
 	}
 
-	public int getTiempo() {
-		return tiempo;
+	public int getTiempoBase() {
+		return tiempoBase;
 	}
 
 	public int getCantidadProducida() {
 		return cantidadProducida;
 	}
 
-	public List<Objeto> getIngredientes() {
+	public Map<Objeto, Integer> getIngredientes() {
 		return ingredientes;
 	}
 
