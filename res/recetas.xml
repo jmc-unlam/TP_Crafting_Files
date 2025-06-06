@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <recetas>
-    <!-- Receta simple -->
-    <receta>
-        <nombre>Tabla de Madera</nombre>
-        <tiempo>3</tiempo> <!-- minutos -->
-        <cantidad>4</cantidad> <!-- unidades producidas -->
-        <ingredientes>
-            <ingrediente nombre="Madera" cantidad="2"/>
-        </ingredientes>
-    </receta>
-
-    <!-- Receta con múltiples ingredientes -->
-    <receta>
-        <nombre>Barra de Hierro</nombre>
-        <tiempo>5</tiempo>
-        <cantidad>1</cantidad>
-        <ingredientes>
-            <ingrediente nombre="Mineral de Hierro" cantidad="3"/>
-            <ingrediente nombre="Carbón" cantidad="1"/>
-        </ingredientes>
-    </receta>
-
-    <!-- Receta con ingrediente intermedio -->
-    <receta>
-        <nombre>Hacha de Hierro</nombre>
-        <tiempo>8</tiempo>
-        <cantidad>1</cantidad>
-        <ingredientes>
-            <ingrediente nombre="Barra de Hierro" cantidad="2"/>
-            <ingrediente nombre="Tabla de Madera" cantidad="3"/>
-        </ingredientes>
-    </receta>
-
-    <!-- Receta que produce múltiples unidades -->
-    <receta>
-        <nombre>Antorcha</nombre>
-        <tiempo>2</tiempo>
-        <cantidad>3</cantidad>
-        <ingredientes>
-            <ingrediente nombre="Madera" cantidad="1"/>
-            <ingrediente nombre="Carbón" cantidad="1"/>
-        </ingredientes>
-    </receta>
+  <receta>
+    <objetoProducido nombre="Tablones de Roble"/>
+    <ingredientes>
+      <ingrediente nombre="Madera de Roble" tipo="basico" cantidad="1"/>
+    </ingredientes>
+    <cantidadProducida>4</cantidadProducida>
+    <tiempoBase>1</tiempoBase>
+  </receta>
+  <receta>
+    <objetoProducido nombre="Palo"/>
+    <ingredientes>
+      <ingrediente nombre="Tablones de Roble" tipo="intermedio" cantidad="2"/>
+    </ingredientes>
+    <cantidadProducida>4</cantidadProducida>
+    <tiempoBase>0</tiempoBase>
+  </receta>
+  <receta>
+    <objetoProducido nombre="Mesa de Crafteo"/>
+    <ingredientes>
+      <ingrediente nombre="Tablones de Roble" tipo="intermedio" cantidad="4"/>
+    </ingredientes>
+    <cantidadProducida>1</cantidadProducida>
+    <tiempoBase>2</tiempoBase>
+  </receta>
+  <receta>
+    <objetoProducido nombre="Hacha de Piedra"/>
+    <ingredientes>
+      <ingrediente nombre="Palo" tipo="intermedio" cantidad="2"/>
+      <ingrediente nombre="Piedra" tipo="basico" cantidad="3"/>
+    </ingredientes>
+    <cantidadProducida>1</cantidadProducida>
+    <tiempoBase>5</tiempoBase>
+  </receta>
 </recetas>
