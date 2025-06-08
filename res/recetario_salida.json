@@ -1,0 +1,77 @@
+[
+  {
+    "objetoProducido": {
+      "tipo": "intermedio",
+      "nombre": "Tablones de Roble"
+    },
+    "ingredientes": [
+      {
+        "objeto": {
+          "tipo": "basico",
+          "nombre": "Madera de Roble"
+        },
+        "cantidad": 1
+      }
+    ],
+    "cantidadProducida": 4,
+    "tiempoBase": 1
+  },
+  {
+    "objetoProducido": {
+      "tipo": "intermedio",
+      "nombre": "Palo"
+    },
+    "ingredientes": [
+      {
+        "objeto": {
+          "tipo": "intermedio",
+          "nombre": "Tablones de Roble"
+        },
+        "cantidad": 2
+      }
+    ],
+    "cantidadProducida": 4,
+    "tiempoBase": 4
+  },
+  {
+    "objetoProducido": {
+      "tipo": "intermedio",
+      "nombre": "Mesa de Crafteo"
+    },
+    "ingredientes": [
+      {
+        "objeto": {
+          "tipo": "intermedio",
+          "nombre": "Tablones de Roble"
+        },
+        "cantidad": 4
+      }
+    ],
+    "cantidadProducida": 1,
+    "tiempoBase": 2
+  },
+  {
+    "objetoProducido": {
+      "tipo": "intermedio",
+      "nombre": "Hacha de Piedra"
+    },
+    "ingredientes": [
+      {
+        "objeto": {
+          "tipo": "intermedio",
+          "nombre": "Palo"
+        },
+        "cantidad": 2
+      },
+      {
+        "objeto": {
+          "tipo": "basico",
+          "nombre": "Piedra"
+        },
+        "cantidad": 3
+      }
+    ],
+    "cantidadProducida": 1,
+    "tiempoBase": 5
+  }
+]
