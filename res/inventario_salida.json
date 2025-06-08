@@ -1,0 +1,30 @@
+[
+  {
+    "objeto": {
+      "tipo": "intermedio",
+      "nombre": "Tablones de Roble"
+    },
+    "cantidad": 4
+  },
+  {
+    "objeto": {
+      "tipo": "basico",
+      "nombre": "Mineral de Hierro"
+    },
+    "cantidad": 8
+  },
+  {
+    "objeto": {
+      "tipo": "basico",
+      "nombre": "Madera de Roble"
+    },
+    "cantidad": 15
+  },
+  {
+    "objeto": {
+      "tipo": "basico",
+      "nombre": "Piedra"
+    },
+    "cantidad": 3
+  }
+]
