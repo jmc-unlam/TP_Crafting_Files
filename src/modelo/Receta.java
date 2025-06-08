@@ -35,14 +35,19 @@ public class Receta {
 	
 	@Override
     public String toString() {
-        String ingredientesStr = ingredientes.entrySet().stream()
-            .map(e -> e.getKey() + " x" + e.getValue())
-            .collect(Collectors.joining(", "));
-        
-        return "Receta{" +
-            "Produce: " + objetoProducido + " x" + cantidadProducida +
-            ", Ingredientes: [" + ingredientesStr + "]" +
-            ", Tiempo: " + tiempoBase + "}" ;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Objeto producido: ").append(objetoProducido).append("\n");
+        sb.append("Cantidad producida: ").append(cantidadProducida).append("\n");
+        sb.append("Tiempo de crafteo: ").append(tiempoBase).append("\n");
+        sb.append("Ingredientes:\n");
+
+        for (Map.Entry<Objeto, Integer> entry : ingredientes.entrySet()) {
+            Objeto obj = entry.getKey();
+            int cantidad = entry.getValue();
+            sb.append("    - ").append(obj.getNombre()).append(" x ").append(cantidad).append("\n");
+        }
+
+        return sb.toString();
     }
 
 }
