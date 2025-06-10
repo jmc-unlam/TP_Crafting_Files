@@ -18,13 +18,16 @@ public class Main {
 		System.out.println("\n=== XML ===");
 		
 		System.out.println("=== INVENTARIO ===");
-		Map<Objeto, Integer> inventario = new InventarioXML("res/inventario.xml").cargar();
+		Map<Objeto, Integer> inventario = new InventarioXML("res/inventario2.xml").cargar();
 		for (Map.Entry<Objeto, Integer> o : inventario.entrySet())	
 			System.out.println(o);
+		new InventarioXML("res/inventario2_salida.xml").guardar(inventario);
 
 		System.out.println("\n=== RECETAS ===");
-		List<Receta> recetas = new RecetaXML("res/recetas.xml").cargar();
+		List<Receta> recetas = new RecetaXML("res/recetas2.xml").cargar();
 		for (Receta r : recetas) System.out.println(r);
+		new RecetaXML("res/recetario2_salida.xml").guardar(recetas);
+		
 		
 		System.out.println("\n=== GSON ===");
 		
