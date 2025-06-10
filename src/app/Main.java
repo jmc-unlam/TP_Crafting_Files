@@ -26,7 +26,7 @@ public class Main {
 		System.out.println("\n=== RECETAS ===");
 		List<Receta> recetas = new RecetaXML("res/recetas2.xml").cargar();
 		for (Receta r : recetas) System.out.println(r);
-		new RecetaXML("res/recetario2_salida.xml").guardar(recetas);
+		new RecetaXML("res/recetas2_salida.xml").guardar(recetas);
 		
 		
 		System.out.println("\n=== GSON ===");
@@ -42,6 +42,6 @@ public class Main {
         List<Receta> recetasJson = new RecetaGSON("res/recetas.json").cargar();
         for (Receta r : recetasJson) System.out.println(r);
         
-        new RecetaGSON("res/recetario_salida.json").guardar(recetasJson);
+        new RecetaGSON("res/recetas_salida.json").guardar(recetasJson);
 	}
 }
