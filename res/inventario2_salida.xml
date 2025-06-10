@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<objetos>
+    <objeto _nombre="Mineral de Hierro" cantidad="8" tipo="basico"/>
+    <objeto _nombre="Tablones de Roble" cantidad="4" tipo="intermedio"/>
+    <objeto _nombre="Madera de Roble" cantidad="15" tipo="basico"/>
+    <objeto _nombre="Piedra" cantidad="3" tipo="basico"/>
+</objetos>

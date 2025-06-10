@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<recetas>
+    <receta>
+        <objetoProducido _nombre="Tablones de Roble" cantidad="4" tiempo="1"/>
+        <ingrediente _nombre="Madera de Roble" cantidad="1" tipo="basico"/>
+    </receta>
+    <receta>
+        <objetoProducido _nombre="Palo" cantidad="4" tiempo="4"/>
+        <ingrediente _nombre="Tablones de Roble" cantidad="2" tipo="intermedio"/>
+    </receta>
+    <receta>
+        <objetoProducido _nombre="Mesa de Crafteo" cantidad="1" tiempo="2"/>
+        <ingrediente _nombre="Tablones de Roble" cantidad="4" tipo="intermedio"/>
+    </receta>
+    <receta>
+        <objetoProducido _nombre="Hacha de Piedra" cantidad="1" tiempo="5"/>
+        <ingrediente _nombre="Palo" cantidad="2" tipo="intermedio"/>
+        <ingrediente _nombre="Piedra" cantidad="3" tipo="basico"/>
+    </receta>
+</recetas>

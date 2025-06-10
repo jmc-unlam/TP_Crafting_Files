@@ -15,7 +15,7 @@ import modelo.ObjetoIntermedio;
 public class InventarioXML extends ManejadorXML<Map<Objeto, Integer>> {
 
 	private Objeto objetoActual;
-	private StringBuilder contenido;
+	//private StringBuilder contenido;
 
 	public InventarioXML(String rutaArchivo) {
 		super(rutaArchivo);
@@ -24,41 +24,41 @@ public class InventarioXML extends ManejadorXML<Map<Objeto, Integer>> {
 
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-		contenido = new StringBuilder();
+		//contenido = new StringBuilder();
 		if (qName.equalsIgnoreCase("objeto")) {
-			String nombre = attributes.getValue("nombre");
+            String nombre = attributes.getValue("_nombre");
             String tipo = attributes.getValue("tipo");
             int cantidad = Integer.parseInt(attributes.getValue("cantidad"));
 
             if ("basico".equalsIgnoreCase(tipo)) {
-            	objetoActual = new ObjetoBasico(nombre);
+                objetoActual = new ObjetoBasico(nombre);
             } else if ("intermedio".equalsIgnoreCase(tipo)) {
-            	objetoActual = new ObjetoIntermedio(nombre);
+                objetoActual = new ObjetoIntermedio(nombre);
             } else {
                 throw new SAXException("Tipo de objeto desconocido para ingrediente: " + tipo);
             }
             datos.put(objetoActual, cantidad);
-		}
+        }
 	}
 
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
-		contenido.append(ch, start, length);
+		//contenido.append(ch, start, length);
 	}
 
 	@Override
 	protected void generarDocumento(Document doc, Map<Objeto, Integer> inventario) {
 		Element rootElement = doc.createElement("objetos");
         doc.appendChild(rootElement);
-        
+
         for (Map.Entry<Objeto, Integer> entry : inventario.entrySet()) {
             Objeto obj = entry.getKey();
             Element objetoElement = doc.createElement("objeto");
-            
-            objetoElement.setAttribute("nombre", obj.getNombre());
+
+            objetoElement.setAttribute("_nombre", obj.getNombre());
             objetoElement.setAttribute("tipo", obj instanceof ObjetoBasico ? "basico" : "intermedio");
             objetoElement.setAttribute("cantidad", entry.getValue().toString());
-            
+
             rootElement.appendChild(objetoElement);
         }
 	}
