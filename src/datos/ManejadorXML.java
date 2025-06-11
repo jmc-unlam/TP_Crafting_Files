@@ -13,6 +13,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public abstract class ManejadorXML<T> extends DefaultHandler {
@@ -23,15 +24,18 @@ public abstract class ManejadorXML<T> extends DefaultHandler {
 		this.rutaArchivo = rutaArchivo;
 	}
 
-	public T cargar() {
+	public T cargar() throws SAXException {
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser parser = factory.newSAXParser();
 			parser.parse(new File(rutaArchivo), this);
 			
 			System.out.println("Recetas leidas desde: ./" + rutaArchivo);
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SAXException e) { 
+			//System.err.println("Error de parseo SAX al cargar"); //si falla una carga contonua con las demas.
+            throw e; // necesito volver a tirar la exeption.
+        } catch (Exception e) {
+			//e.printStackTrace(); //si falla devuelve vacio y se va.
 		}
 		return this.datos;
 	}
