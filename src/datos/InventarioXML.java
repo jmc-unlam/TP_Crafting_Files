@@ -32,12 +32,15 @@ public class InventarioXML extends ManejadorXML<Map<Objeto, Integer>> {
 
             if ("basico".equalsIgnoreCase(tipo)) {
                 objetoActual = new ObjetoBasico(nombre);
+                datos.put(objetoActual, cantidad);
             } else if ("intermedio".equalsIgnoreCase(tipo)) {
                 objetoActual = new ObjetoIntermedio(nombre);
+                datos.put(objetoActual, cantidad);
             } else {
+            	datos= new HashMap<>();
                 throw new SAXException("Tipo de objeto desconocido para ingrediente: " + tipo);
             }
-            datos.put(objetoActual, cantidad);
+            
         }
 	}
 
